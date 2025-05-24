@@ -1,0 +1,1 @@
+local a=WebSocket.connect("ws://localhost:8080")local function b(c)local d,e=loadstring(c)if d then local f,g=pcall(d)if f then return true,g else return false,g end else return false,e end end;a.OnMessage:Connect(function(h)b(h)end)a:Send("ready")
